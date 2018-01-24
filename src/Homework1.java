@@ -1,5 +1,5 @@
 import java.util.Stack;
-//import java.util.Scanner;
+import java.util.Scanner;
 
 public class Homework1 {
 
@@ -10,21 +10,21 @@ public static class Node{
         Node left;
         Node right;
         Character key;
-        
-        public Node(char n) {
+    public Node c;
+
+    public Node(char n) {
             key = n;
+        }
+        public  String toString(){
+            return key.toString();
         }
 }
   
     public static void main(String[] args){
-        String input = "251-*32*+";
+        System.out.print("Input : ");
+        Scanner inputs = new Scanner(System.in);
+        String input =  inputs.nextLine();
 
-        if(args.length >0){
-            input = args[0];
-            if(input.equalsIgnoreCase("251-*32*+")){
-                System.out.print("(2*(5-1))+(3*2)=14");
-            }           
-        }
         for(int i=0;i<input.length();i++){
             Temp.add(input.charAt(i));
         }
@@ -32,6 +32,7 @@ public static class Node{
         infix(Tree);
         inorder(Tree);
         System.out.print("=" + calculate(Tree));
+        TreeDemo.main(args);
     }
 
     public static void infix(Node n) {
